@@ -38,7 +38,7 @@ local function WeaponEquip( _, wep )
   wep.SecondaryAttack360 = wep.SecondaryAttack --why not preserve original function?
   wep.SecondaryAttack = function(self)
     	Spin360()
-    	self:SecondaryAttack()
+    	self:SecondaryAttack360()
     end
   end
 end
