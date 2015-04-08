@@ -35,8 +35,10 @@ hook.Add( "CalcView", "SpinView360", CalcView )
 
 local function WeaponEquip( _, wep )
   if wep:IsWeapon() then
+  wep.SecondaryAttack360 = wep.SecondaryAttack --why not preserve original function?
   wep.SecondaryAttack = function(self)
-    Spin360()
+    	Spin360()
+    	self:SecondaryAttack()
     end
   end
 end
